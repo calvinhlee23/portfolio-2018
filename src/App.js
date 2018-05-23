@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
 import './App.css';
+
+import Header from './header/Header.jsx';
+import Projects from './projects/Projects.jsx';
+import Contact from './contact/Contact.jsx';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={"static/media/logo.5d5d9eef.svg"} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/projects" component={Projects}/>
+          <Route path="/contact" component={Contact}/>
+          <Route component={Header}/>
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
