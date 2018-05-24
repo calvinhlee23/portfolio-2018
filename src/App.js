@@ -10,13 +10,11 @@ import Contact from './contact/Contact.jsx';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route path="/projects" component={Projects}/>
-          <Route path="/contact" component={Contact}/>
-          <Route component={Header}/>
-        </Switch>
-      </BrowserRouter>
+      <div className="App">
+        <Header/>
+        <Project/>
+        <Contact/>
+      </div>
     );
   }
 }
